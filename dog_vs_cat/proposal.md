@@ -29,7 +29,15 @@
 
 在上述所有图片中，都是彩色图片都包含 RGB 三通道的信息，但是图片质量差异很大，因此在进行数据输入的时候需要进行数据预处理，将图片裁剪大小一致的图片。
 
-数据大小不一致没有办法直接输入到神经网络中使用，需要进行resize，设置一个图片的size,偏大的图片需要裁剪，偏小的使用0填充。本次实验使用keras的ImageDataGenerator.flow_from_directory进行图片裁剪,其中参数target_size: 整数tuple,默认为(256, 256).图像将被resize成该尺寸。
+数据大小不一致没有办法直接输入到神经网络中使用，需要进行resize。本次实验使用keras的ImageDataGenerator.flow_from_directory的参数target_size设置图片大小进行resize。
+
+其中：
+Xception模型默认输入图片大小为299x299
+VGG16模型的默认输入图片大小为224x224
+ResNet50模型模型的默认输入尺寸为224x224
+
+
+
 
 
 ### 解决方法
@@ -84,9 +92,14 @@ Kera的应用模块Application提供了带有预训练权重的Keras模型，这
 
 ### 参考文献
 
-【1】《中国计算机学会通讯》第8期《专题》
-【2】[LaTeX 各种命令，符号](https://blog.csdn.net/garfielder007/article/details/51646604)
-【3】Alex Krizhevsky，Ilya Sutskever，Geoffrey E. Hinton. ImageNet Classification with Deep Convolutional Neural Networks
-【4】http://keras-cn.readthedocs.io/en/latest/
-【5】Oren Rippel,Jasper Snoek,Ryan P. Adams. Spectral Representations for Convolutional Neural Networks
+[1]《中国计算机学会通讯》第8期《专题》
+[2] LaTeX 各种命令，符号 https://blog.csdn.net/garfielder007/article/details/51646604
+[3] Alex Krizhevsky，Ilya Sutskever，Geoffrey E. Hinton. ImageNet Classification with Deep Convolutional Neural Networks
+[4] http://keras-cn.readthedocs.io/en/latest/
+[5]Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun.Deep Residual Learning for Image Recognition
+[6] Karen Simonyan, Andrew Zisserman. Very Deep Convolutional Networks for Large-Scale Image Recognition
+[7]Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, Andrew Rabinovich. Going Deeper with Convolutions
+[8] Diederik P. Kingma, Jimmy. Ba.Adam: A Method for Stochastic Optimization
+[9] Matthew D. Zeiler. ADADELTA: An Adaptive Learning Rate Method
+ 
 
